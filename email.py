@@ -19,7 +19,7 @@ ELEMENT_TEXT_TO_FIND = "HUMAN Iframe Page"
 HOLD_DURATION_MS = 15000
 
 # Discord Webhook URL
-DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1383790260500168715/QA2QdWol0XpuxZAG07aKjNG_J2yt4DeyreDa8Qv3MBmE3NAo0r1Z2SxD03fyHfytn4t_"
+DISCORD_WEBHOOK_URL = ""
 
 # The IP of your device - Using existing device_ip instead
 # DEVICE_ADDRESS = "192.168.0.33"
