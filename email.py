@@ -31,7 +31,7 @@ ELEMENT_TEXT_TO_FIND = "HUMAN Iframe Page"
 HOLD_DURATION_MS = 15000
 
 # Discord Webhook URL
-DISCORD_WEBHOOK_URL = ""
+DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1383790260500168715/QA2QdWol0XpuxZAG07aKjNG_J2yt4DeyreDa8Qv3MBmE3NAo0r1Z2SxD03fyHfytn4t_"
 
 # The IP of your device - Using existing device_ip instead
 # DEVICE_ADDRESS = "192.168.0.33"
@@ -534,7 +534,6 @@ while True:
 
                 if bounds_after_second_long_press is not None:
                      print(f"  [!] Element '{ELEMENT_TEXT_TO_FIND}' is still present after second long click. Restarting script.")
-                     continue # Restart the while loop if still present after two attempts
                 else:
                      print(f"  [+] Element '{ELEMENT_TEXT_TO_FIND}' is no longer present after second long click. Continuing.")
 
