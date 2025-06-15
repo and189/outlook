@@ -10,18 +10,6 @@ import yaml
 import json # Added for JSON handling
 import requests # Added for sending Discord messages
 
-def load_config(config_path):
-    """Loads configuration from a YAML file."""
-    try:
-        with open(config_path, 'r') as f:
-            config = yaml.safe_load(f)
-        return config
-    except FileNotFoundError:
-        print(f"Error: Config file not found at {config_path}", file=sys.stderr)
-        sys.exit(1)
-    except yaml.YAMLError as e:
-        print(f"Error parsing config file: {e}", file=sys.stderr)
-        sys.exit(1)
 
 # --- CONFIGURATION ---
 # The text of the element to be pressed (corrected according to your specification)
@@ -63,13 +51,28 @@ def string_to_keycodes(text):
 
 # Lists of common German names for more human-like generation
 FIRST_NAMES = [
-    "Thomas", "Michael", "Andreas", "Stefan", "Christian", "Daniel", "Martin", "Peter", "Frank", "Jürgen",
-    "Maria", "Andrea", "Sabine", "Claudia", "Petra", "Nicole", "Tanja", "Sandra", "Susanne", "Martina"
+    "Thomas", "Michael", "Andreas", "Stefan", "Christian", "Daniel", "Martin", "Peter", "Frank",
+    "Maria", "Andrea", "Sabine", "Claudia", "Petra", "Nicole", "Tanja", "Sandra", "Susanne", "Martina",
+    "Alexander", "Benjamin", "Christopher", "David", "Felix", "Florian", "Jan", "Jonas", "Julian", "Lukas",
+    "Markus", "Maximilian", "Moritz", "Niklas", "Pascal", "Philipp", "Sebastian", "Simon", "Tim", "Tobias",
+    "Anna", "Carina", "Christina", "Julia", "Katharina", "Laura", "Lena", "Lisa", "Melanie", "Michelle",
+    "Nadine", "Natalie", "Rebecca", "Sarah", "Stefanie", "Vanessa", "Victoria", "Yvonne", "Hannah",
+    "Adrian", "Anton", "Arthur", "Carl", "Emil", "Erik", "Finn", "Jakob", "Leon", "Liam",
+    "Louis", "Mats", "Noah", "Oskar", "Paul", "Theo", "Vincent", "Ben", "Emilia", "Frieda",
+    "Ida", "Johanna", "Lina", "Luisa", "Mathilda", "Mia", "Mila", "Nele", "Paula", "Pia",
+    "Romy", "Stella", "Zoe", "Clara", "Charlotte", "Eleonora", "Franziska", "Josephine", "Theresa", "Viktoria"
 ]
 
 LAST_NAMES = [
-    "Müller", "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Becker", "Schulz", "Hofmann",
-    "Schäfer", "Koch", "Bauer", "Richter", "Klein", "Wolf", "Schröder", "Neumann", "Schwarz", "Zimmermann"
+    "Schmidt", "Schneider", "Fischer", "Weber", "Meyer", "Wagner", "Becker", "Schulz", "Hofmann",
+    "Koch", "Bauer", "Richter", "Klein", "Wolf", "Neumann", "Schwarz", "Zimmermann",
+    "Braun", "Franke", "Friedrich", "Günther", "Haas", "Hartmann", "Jung", "Kaiser", "Keller", "Lange",
+    "Lehmann", "Maier", "Meier", "Peters", "Pfeiffer", "Roth", "Seidel", "Walter", "Winter", "Ziegler",
+    "Albrecht", "Arnold", "Bachmann", "Baumann", "Brandt", "Dietrich", "Ebert", "Eichhorn", "Ernst", "Fink",
+    "Fuchs", "Gross", "Hahn", "Herrmann", "Huber", "Jordan",
+    "Kraus", "Krieger", "Ludwig", "Marx", "Mohr", "Naumann", "Otto", "Pohl", "Reuter", "Roth", "Sauer", "Simon", "Vogel", "Voigt",
+    "Wagner", "Weiss", "Werner", "Winkler", "Zeller", "Berger", "Falk", "Glaser", "Hammer",
+    "Kuhn", "Lenz", "Merkel", "Nowak", "Pfeifer", "Reimann", "Scherer", "Steiner", "Thiel", "Ulrich"
 ]
 
 def generate_random_string(length):
@@ -331,7 +334,6 @@ while True:
             pass # Or add logging/error handling if needed
 
         # config is still needed for other settings like URLs and API keys
-        config = load_config('config.yaml')
 
         url_to_open = "https://go.microsoft.com/fwlink/p/?linkid=2125440&clcid=0x409&culture=en-us&country=us" # Replace with the URL you want to open
         log_file = "account_logs.txt" # Define log file name
