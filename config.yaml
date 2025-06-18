@@ -1,0 +1,11 @@
+adb_config:
+  device_ip: "192.168.0.31" # Trage hier die IP deines Email Android-Geräts 
+  device_ip2: "192.168.0.36" # Trage hier die IP deines ptc Android-Geräts 
+
+  initial_adb_url: "https://join.pokemon.com/" # URL to open initially with adb command (e.g., "http://www.stackoverflow.com" or "about:blank")
+
+api_config:
+  ptc_webhook_url: "http://164.68.105.51:8787/submitPTCacc"  # Webhook für PTC
+
+ocr_config:
+  tesseract_path: "/usr/bin/tesseract" # Path to tesseract executable for OCR (updated for Ubuntu)
